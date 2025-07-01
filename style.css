@@ -1,73 +1,152 @@
-.gradient-bg {
-  background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
-}
-.card-hover:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
-    0 10px 10px -5px rgba(0, 0, 0, 0.04);
-}
-.timeline-item:not(:last-child)::after {
-  content: "";
-  position: absolute;
-  left: 7px;
-  top: 24px;
-  height: calc(100% - 24px);
-  width: 2px;
-  background-color: #e5e7eb;
-}
-.skill-bar {
-  height: 8px;
-  border-radius: 4px;
-  background-color: #e5e7eb;
-}
-.skill-progress {
-  height: 100%;
-  border-radius: 4px;
-  background: linear-gradient(90deg, #3b82f6 0%, #8b5cf6 100%);
-}
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-.animate-fade-in {
-  animation: fadeIn 0.6s ease-out forwards;
-}
+            .gradient-bg {
+            background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .timeline-item:not(:last-child)::after {
+            content: '';
+            position: absolute;
+            left: 7px;
+            top: 24px;
+            height: calc(100% - 24px);
+            width: 2px;
+            background-color: #e5e7eb;
+        }
+        .skill-bar {
+            height: 8px;
+            border-radius: 4px;
+            background-color: #e5e7eb;
+        }
+        .skill-progress {
+            height: 100%;
+            border-radius: 4px;
+            background: linear-gradient(90deg, #3b82f6 0%, #8b5cf6 100%);
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fade-in {
+            animation: fadeIn 0.6s ease-out forwards;
+        }
+
+        
 
 #VerMais {
-  margin-left: 55%;
-  margin-top: -1%;
+  display: block;
+  margin: 20px auto 0;
+  width: fit-content;
+}
+
+@media (min-width: 768px) {
+  #VerMais {
+    margin: 20px 0 0;
+  }
 }
 
 .VerMaisMeio {
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  width: 350px;
-  max-height: 90vh; /* Mantém a altura máxima */
+  gap: 15px;
+  width: 90%;
+  max-width: 700px;
+  height: auto;
+  max-height: 90vh;
   background-color: #fff;
-  padding: 20px;
-  border-radius: 20px;
+  padding: 25px;
+  border-radius: 16px;
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 9999;
-  border: 0.3vw solid #3b82f6;
-  overflow-y: auto; /* Adiciona scroll vertical se necessário */
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.3);
+  overflow-y: auto;
+  transition: all 0.3s ease;
+  border: none;
+}
+
+@media (max-width: 768px) {
+  .VerMaisMeio {
+    width: 95%;
+    padding: 20px;
+    max-height: 85vh;
+  }
+}
+
+@media (max-width: 480px) {
+  .VerMaisMeio {
+    width: 98%;
+    padding: 15px;
+    border-radius: 12px;
+  }
+}
+
+.VerMaisMeio h2 {
+  color: #3b82f6;
+  text-align: center;
+  margin-bottom: 10px;
+  font-size: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .VerMaisMeio h2 {
+    font-size: 1.3rem;
+  }
 }
 
 .Paragrafo {
-  font-size: 14px; /* Reduz o tamanho da fonte para melhorar a adaptação */
-  line-height: 1.5; /* Melhora o espaçamento entre linhas */
+  font-size: 16px;
+  line-height: 1.6;
+  color: #4b5563;
   margin: 0;
-  padding: 0;
+  padding: 5px;
 }
+
+@media (max-width: 768px) {
+  .Paragrafo {
+    font-size: 15px;
+    line-height: 1.5;
+  }
+}
+
+@media (max-width: 480px) {
+  .Paragrafo {
+    font-size: 14px;
+    line-height: 1.4;
+  }
+}
+
 .return {
-  color: #3b82f6;
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: #3b82f6;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  font-size: 16px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 768px) {
+  .return {
+    width: 30px;
+    height: 30px;
+    font-size: 14px;
+  }
+}
+
+.return:hover {
+  background: #2563eb;
+  transform: scale(1.1);
 }
