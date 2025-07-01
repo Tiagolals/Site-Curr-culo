@@ -22,7 +22,7 @@
       crossorigin="anonymous"
     ></script>
   </head>
-  <body class="font-sans bg-gray-50 text-gray-800">
+    <body class="font-sans bg-gray-50 text-gray-800">
     <!-- CODIGO FEITO COM O AUXILIO DE IA -->
     <header class="gradient-bg text-white sticky top-0 z-50 shadow-md">
       <div class="container mx-auto px-4 py-4">
@@ -209,21 +209,23 @@
                 </p>
                 <p class="text-gray-600">Curitiba / PR</p>
               </div>
+              <div class="mt-6 w-full text-center">
+                <button
+                  class="bg-white text-blue-600 px-6 py-3 rounded-lg font-medium hover:bg-gray-100 transition mx-auto"
+                  id="VerMais"
+                >
+                  Ver Mais
+                </button>
+              </div>
             </div>
           </div>
         </div>
       </div>
-      <button
-        class="bg-white text-blue-600 px-6 py-3 rounded-lg font-medium hover:bg-gray-100 transition"
-        id="VerMais"
-      >
-        Ver Mais
-      </button>
       <div class="VerMaisMeio">
-        <button>
-          <a><p class="return">Para voltar, aperte AQUI</p></a>
+        <button class="return" title="Fechar">
+          <i class="fas fa-times"></i>
         </button>
-        <h2 class="text-3xl font-bold text-center mb-12">Sobre Mim</h2>
+        <h2>Sobre Mim</h2>
         <p class="Paragrafo">
           ➡️ Formação Ensino médio - 3° ano técnico em Desenvolvimento de
           Sistemas (período da manhã) - Cursando <br />🖋️ Fui designer
@@ -837,10 +839,19 @@
 
       $(".VerMaisMeio").hide();
       $("#VerMais").click(function () {
-        $(".VerMaisMeio").fadeIn();
+        $(".VerMaisMeio").fadeIn(300);
+        $("body").css("overflow", "hidden");
       });
       $(".return").click(function () {
-        $(".VerMaisMeio").fadeOut();
+        $(".VerMaisMeio").fadeOut(300);
+        $("body").css("overflow", "auto");
+      });
+      // Close when clicking outside
+      $(document).mouseup(function(e) {
+        if (!$(".VerMaisMeio").is(e.target) && $(".VerMaisMeio").has(e.target).length === 0) {
+          $(".VerMaisMeio").fadeOut(300);
+          $("body").css("overflow", "auto");
+        }
       });
     </script>
   </body>
